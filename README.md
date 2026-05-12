@@ -2,6 +2,8 @@
 
 Este proyecto es una pequeña API de validación de formato de documentos de diversos paises de LATAM, no guarda información solo corre algoritmos que verifican que el formato del documento sea válido dependiendo del pais.
 
+Tambien dispone de una vista simple hecha con HTMX a modo de demo.
+
 ## Endpoints
 
 ``` POST /api/validate ```
@@ -52,4 +54,4 @@ Ya cuando este corriendo se puede ir a la URL: localhost:3000/docs en donde esta
 
 ## Herramientas utilizadas
 
-Node.js, Fastify, Swagger UI
+Node.js, Fastify, Swagger UI, HTMX

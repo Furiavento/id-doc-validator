@@ -20,6 +20,10 @@ export default async function validateRoutes(fastify) {
     }
   }, async (request, reply) => {
     try {
+      const apiKey = request.headers['x-api-key'];
+      if (!apiKey || apiKey !== process.env.API_KEY) {
+        return reply.code(401).send({ error: 'No autorizado' });
+      }
       const { country, docType, value } = request.body;
       const fnName = `validate${docType.toUpperCase()}`;
       const mod = await import(`../validators/${country}.js`);
